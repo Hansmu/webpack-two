@@ -12,3 +12,11 @@ Problems that arise:
 Webpack handles these problems by taking all of our JS files and merge them into one large JS file, while making sure execution order is correct for the files.
 This is Webpack's primary purpose.
 
+Javascript has several module systems. To name some:
+CommonJS (used in NodeJS): Uses 'require', 'module.exports'
+AMD (used in frontend): Uses 'require', 'define'
+ES2015: Uses 'import', 'export'
+
+Webpack automatically searches for webpack.config.js file.
+Specifying entry point for Webpack tells it what to execute first when our application starts up in the browser.
+Have to use double quotes in scripts. Should run the local copy inside node_modules. Helps to handle juggling versions between projects.
