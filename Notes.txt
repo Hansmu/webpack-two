@@ -1,0 +1,14 @@
+Single page app
+A bare-bones HTML file gets sent to the user. Javascript then runs on the user machine to create a full webpage.
+We rely on a bunch of Javascript code.
+
+In a SPA we have a ton of Javascript code. In server side rendering/templating there isn't nearly as much JS code.
+
+When you split up your JS codebase into several files(modules), it increases its readability. This, however, has downsides.
+Problems that arise:
+1) Load order. Some files rely on other files. If it gets loaded in the wrong order, then it all collapses. Load order should be the same every time.
+2) More files, slower load times. Downloading dozens of Javascript files cause performance issues. Especially on mobile devices.
+
+Webpack handles these problems by taking all of our JS files and merge them into one large JS file, while making sure execution order is correct for the files.
+This is Webpack's primary purpose.
+
