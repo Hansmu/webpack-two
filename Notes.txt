@@ -20,3 +20,5 @@ ES2015: Uses 'import', 'export'
 Webpack automatically searches for webpack.config.js file.
 Specifying entry point for Webpack tells it what to execute first when our application starts up in the browser.
 Have to use double quotes in scripts. Should run the local copy inside node_modules. Helps to handle juggling versions between projects.
+
+Webpack takes all of our modules code. Puts them into individual functions, puts them into an array and calls the individual functions from the array.
