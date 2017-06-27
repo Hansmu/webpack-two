@@ -11,7 +11,7 @@ const config = {
         rules: [    //  Rules are loaders.
             {
                 use: 'babel-loader', // Say which loader to run.
-                test: /\.js$/,  //  Regular expression. Taken by Webpack and applied to every file. Checks if file ends with .js, then Babel will be applied.
+                test: /\.js$/  //  Regular expression. Taken by Webpack and applied to every file. Checks if file ends with .js, then Babel will be applied.
             }
         ]
     }
