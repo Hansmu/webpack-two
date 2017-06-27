@@ -34,3 +34,6 @@ babel-preset-env: ruleset for telling Babel exactly what pieces of ES2015/6/7 sy
 With loaders it makes sense to only apply it to certain files as otherwise errors might arise.
 
 Letting Webpack handle our CSS means we can make use of a bunch of different CSS files. Can import the CSS files to each of the files we care about them in.
+css-loader: knows how to deal with CSS imports.
+style-loader: takes CSS imports and adds them to the HTML document.
+Takes our styles as raw text and injects it into our bundle.js. Then manually puts it into the html file using JS.

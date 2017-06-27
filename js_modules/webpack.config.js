@@ -12,6 +12,10 @@ const config = {
             {
                 use: 'babel-loader', // Say which loader to run.
                 test: /\.js$/  //  Regular expression. Taken by Webpack and applied to every file. Checks if file ends with .js, then Babel will be applied.
+            },
+            {
+                use: ['style-loader', 'css-loader'],    //  Order matters. Loaders are applied from right to left.
+                test: /\.css$/
             }
         ]
     }
