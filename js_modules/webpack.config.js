@@ -19,6 +19,16 @@ const config = {
                     loader: 'css-loader'
                 }),  //  Webpack is moving away from using loader, it's more legacy, but the way the plugin is written expects using the loader property. With the current version anyway.
                 test: /\.css$/
+            },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/,
+                use: [  //  Order matters. The loader on the far right is the first one that's applied.
+                    {   //  Expand a loader out into an object to provide it with some additional configuration.
+                        loader: 'url-loader',
+                        options: { limit: 40000 }   //  Look for any images that are 40k bytes, if it's smaller put it into our bundle.js, otherwise external file.
+                    },
+                    'image-webpack-loader'
+                ]
             }
         ]
     },

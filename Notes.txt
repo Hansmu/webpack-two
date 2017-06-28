@@ -37,3 +37,8 @@ Letting Webpack handle our CSS means we can make use of a bunch of different CSS
 css-loader: knows how to deal with CSS imports.
 style-loader: takes CSS imports and adds them to the HTML document.
 Takes our styles as raw text and injects it into our bundle.js. Then manually puts it into the html file using JS.
+
+When loading images we have to use two loaders.
+image-webpack-loader: it will compress the image for us automatically. We then take the result and look at how large it is.
+url-loader: behaves differently depending on image size. If the image is small in size, then it will be included inside our bundle.js as raw data.
+If it's big then it gets saved in the build directory and it'll be up to us to reference it.
