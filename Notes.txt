@@ -56,3 +56,13 @@ When you log in, we want it to be snappy, because that sets the tone for the res
 
 When you enable code splitting, just by adding a System.import call, Webpack will automatically change the code that is exported.
 Sometimes will inject extra code. Puts the functions into separate bundle.js files. Webpack looks for System.import calls and adds all that additional codesplitting code in the bundle if it sees it.
+
+Browser caching of resources
+First visit: Have I downloaded a file before? No. Download it.
+Next visit: Have I downloaded a file before? Yes. Download nothing.
+
+Optimization
+1) Separate into two separate chunks - our code and vendor code (React, Lodash etc.).
+    This is to help with browser caching of resources. You don't update vendor dependencies that often. They happen infrequently.
+    Our codebase updates happen a lot more frequently. So when we split we'll download only the part that's changing more often.
+    System.import is used when you split your specific code.
