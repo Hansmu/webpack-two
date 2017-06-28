@@ -48,3 +48,11 @@ The public URL gets added into the bundle.js file in a manner as such: module.ex
 
 If we define the publicPath property, then the URL loader will prepend it to the URL returned from file-loader.
 publicPath will also be prepended to any other loader that uses it.
+
+Codesplitting
+Webpack allows to split up our bundle.js and then programmatically decide when to load up our different JS files.
+E.g. on login just load up the minimum amount for login and then on the actual content page download all the rest.
+When you log in, we want it to be snappy, because that sets the tone for the rest of your application.
+
+When you enable code splitting, just by adding a System.import call, Webpack will automatically change the code that is exported.
+Sometimes will inject extra code. Puts the functions into separate bundle.js files. Webpack looks for System.import calls and adds all that additional codesplitting code in the bundle if it sees it.
