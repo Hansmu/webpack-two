@@ -21,7 +21,7 @@ const config = {
                 test: /\.css$/
             },
             {
-                test: /\.(jpe?g|png|gif|svg)$/,
+                test: /\.(jpg|png|gif|svg)$/,
                 use: [  //  Order matters. The loader on the far right is the first one that's applied.
                     {   //  Expand a loader out into an object to provide it with some additional configuration.
                         loader: 'url-loader',
