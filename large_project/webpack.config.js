@@ -14,7 +14,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name].js'   //  Uses the property defined above to create a file. When bundle file has been created, save it as bundle.js. When vendor has been created, save it as vendor.js.
+    filename: '[name].[chunkhash].js'   //  Uses the property defined above to create a file. When bundle file has been created, save it as bundle.js. When vendor has been created, save it as vendor.js.
   },
   module: {
     rules: [
@@ -31,7 +31,8 @@ module.exports = {
   },
   plugins: [
       new webpack.optimize.CommonsChunkPlugin({
-          name: 'vendor'    //  Looks at our entry points and if it finds common/duplicate code, then pulls it out and puts it in the vendor file that's created in entry.
+          //    Manifest creates a third output file in our dist directory called manifest.js. Gives a better understanding to the browser if the vendor file was actually changed.
+          names: ['vendor', 'manifest']    //  Looks at our entry points and if it finds common/duplicate code, then pulls it out and puts it in the vendor file that's created in entry.
       }),
       new HtmlWebpackPlugin({
           template: 'src/index.html'

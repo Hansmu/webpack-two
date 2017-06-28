@@ -60,6 +60,7 @@ Sometimes will inject extra code. Puts the functions into separate bundle.js fil
 Browser caching of resources
 First visit: Have I downloaded a file before? No. Download it.
 Next visit: Have I downloaded a file before? Yes. Download nothing.
+Caching happens on the name.
 
 Optimization
 1) Separate into two separate chunks - our code and vendor code (React, Lodash etc.).
