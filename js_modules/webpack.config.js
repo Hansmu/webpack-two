@@ -1,4 +1,5 @@
 const path = require('path'); // path comes from NodeJS. Helper to give absolute path.
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config = {
     entry: './src/index.js', // Relative path.
@@ -14,11 +15,16 @@ const config = {
                 test: /\.js$/  //  Regular expression. Taken by Webpack and applied to every file. Checks if file ends with .js, then Babel will be applied.
             },
             {
-                use: ['style-loader', 'css-loader'],    //  Order matters. Loaders are applied from right to left.
+                loader: ExtractTextPlugin.extract({ //  Plugins work outside of Webpack pipeline and takes things out of the webpack bundle.
+                    loader: 'css-loader'
+                }),  //  Webpack is moving away from using loader, it's more legacy, but the way the plugin is written expects using the loader property. With the current version anyway.
                 test: /\.css$/
             }
         ]
-    }
+    },
+    plugins: [
+        new ExtractTextPlugin('style.css')  //  Anything that the loader caught is going to be grabbed by this plugin and then saved into a file called style.css.
+    ]
 };
 
 module.exports = config;
