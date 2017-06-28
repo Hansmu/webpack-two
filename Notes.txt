@@ -62,6 +62,8 @@ First visit: Have I downloaded a file before? No. Download it.
 Next visit: Have I downloaded a file before? Yes. Download nothing.
 Caching happens on the name.
 
+Should not go overboard with code splitting. With just a few routes there's not much point. When you start having many routes one should consider it.
+
 Optimization
 1) Separate into two separate chunks - our code and vendor code (React, Lodash etc.).
     This is to help with browser caching of resources. You don't update vendor dependencies that often. They happen infrequently.
