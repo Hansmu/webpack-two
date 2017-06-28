@@ -45,3 +45,6 @@ If it's big then it gets saved in the build directory and it'll be up to us to r
 
 file-loader: tells webpack to extract the required object as a file and return its public url.
 The public URL gets added into the bundle.js file in a manner as such: module.exports = __webpack_require__.p + "2de6cada75d3aa596d292ab3f7846456.jpg";
+
+If we define the publicPath property, then the URL loader will prepend it to the URL returned from file-loader.
+publicPath will also be prepended to any other loader that uses it.

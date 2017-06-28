@@ -6,7 +6,8 @@ const config = {
     output: {
         path: path.resolve(__dirname, 'build'), // Path to save to. Requires absolute path. Node makes sure we get the correct path with path.resolve.
         //  __dirname is a constant in NodeJS. A reference to the current directory.
-        filename: 'bundle.js' // Whatever name you want. Generally called bundle.js
+        filename: 'bundle.js', // Whatever name you want. Generally called bundle.js
+        publicPath: 'build/'
     },
     module: { //    Module system
         rules: [    //  Rules are loaders.
