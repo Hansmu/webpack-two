@@ -36,6 +36,9 @@ module.exports = {
       }),
       new HtmlWebpackPlugin({
           template: 'src/index.html'
+      }),
+      new webpack.DefinePlugin({
+          'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)  //  This flag is used by React. If it equals production, then it's going to work faster because it doesn't check errors.
       })
   ]
 };
